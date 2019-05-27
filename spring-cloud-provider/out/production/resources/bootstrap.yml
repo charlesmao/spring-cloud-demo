@@ -1,0 +1,20 @@
+server:
+  port: 8081
+spring:
+  application:
+    name: provider-demo
+  cloud:
+    config:
+      discovery:
+        enabled: true
+        service-id: spring-cloud-config
+      label: master
+      #uri: http://localhost:8810
+      name: ${spring.application.name}
+      profile: dev
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    service-url:
+      default-zone: http://192.168.0.78:8761/eureka

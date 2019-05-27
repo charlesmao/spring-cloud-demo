@@ -1,0 +1,18 @@
+plugins {
+    id 'java'
+}
+
+group 'indi.maozy.microservice'
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile("org.springframework.boot:spring-boot-starter-actuator")
+    compile("org.springframework.cloud:spring-cloud-starter-gateway")
+    compile("org.springframework.cloud:spring-cloud-starter-netflix-eureka-client")
+}
