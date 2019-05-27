@@ -1,6 +1,7 @@
 package indi.maozy.microservice.controller;
 
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
@@ -12,6 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
  * @author 毛中勇
  * @create 2019-05-27 14:57
  */
+@RefreshScope
 @RestController(value = "/user")
 public class UserController {
 

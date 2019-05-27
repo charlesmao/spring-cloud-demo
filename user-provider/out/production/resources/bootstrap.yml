@@ -5,12 +5,8 @@ spring:
     name: user-provider
   cloud:
     config:
-      discovery:
-        enabled: true
-        service-id: spring-cloud-config
+      uri: http://localhost:8888
       label: master
-      #uri: http://localhost:8810
-      name: ${spring.application.name}
       profile: dev
 eureka:
   instance:
