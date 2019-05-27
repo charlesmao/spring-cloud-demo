@@ -10,10 +10,10 @@ spring:
         locator:
           enabled: true
       routes:
-      - id: route-provider-demo
-        uri: lb://provider-demo
+      - id: route-user-provider
+        uri: lb://user-provider
         predicates:
-        - Path=/hello/**
+        - Path=/user/**
 
 eureka:
   instance:

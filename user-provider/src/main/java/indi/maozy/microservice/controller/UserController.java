@@ -12,10 +12,10 @@ import org.springframework.web.bind.annotation.RestController;
  * @author 毛中勇
  * @create 2019-05-27 14:57
  */
-@RestController
-public class HelloController {
+@RestController(value = "/user")
+public class UserController {
 
-    @Value("cn.spring-cloud.book")
+    @Value("${cn.spring-cloud.book}")
     private String remoteInfo;
 
     @GetMapping("/hello/{name}")
