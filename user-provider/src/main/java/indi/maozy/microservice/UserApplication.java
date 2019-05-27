@@ -11,8 +11,8 @@ import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
  * @author 毛中勇
  * @create 2019-05-27 10:40
  */
-@SpringBootApplication
 @EnableEurekaClient
+@SpringBootApplication
 public class UserApplication {
 
     public static void main(String[] args) {
