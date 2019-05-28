@@ -1,11 +1,16 @@
+buildscript {
+    dependencies {
+        //用来打包
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+    }
+}
+
 plugins {
     id 'java'
 }
 
 group 'indi.maozy.microservice'
 version '1.0-SNAPSHOT'
-
-sourceCompatibility = 1.8
 
 repositories {
     mavenCentral()
@@ -16,4 +21,5 @@ dependencies {
     compile ("org.springframework.boot:spring-boot-starter-actuator")
     compile ("org.springframework.cloud:spring-cloud-starter-netflix-eureka-client")
     compile ("org.springframework.cloud:spring-cloud-config-client")
+    compile ("de.codecentric:spring-boot-admin-starter-client")
 }

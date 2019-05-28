@@ -11,6 +11,7 @@ buildscript {
     dependencies {
         //用来打包
         classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+        classpath("io.spring.gradle:dependency-management-plugin:1.0.7.RELEASE")
     }
 }
 
@@ -21,7 +22,7 @@ plugins {
 group 'indi.maozy.microservice'
 version '1.0-SNAPSHOT'
 
-sourceCompatibility = 1.8
+
 
 repositories {
     mavenCentral()
@@ -31,6 +32,9 @@ repositories {
 
 
 allprojects {
+
+    sourceCompatibility = 1.8
+
     repositories {
         maven { url 'http://maven.aliyun.com/nexus/content/groups/public/' }
         jcenter()
@@ -42,6 +46,12 @@ allprojects {
     }
 }
 
+
+
+ext {
+    springBootAdminVersion = "2.1.5"
+}
+
 subprojects {
     apply plugin: 'java'
     apply plugin: 'idea'
@@ -50,10 +60,18 @@ subprojects {
     //A Gradle plugin that provides Maven-like dependency management functionality
     apply plugin: 'io.spring.dependency-management'
 
+
+
+
     dependencyManagement {
         imports {
             //spring bom helps us to declare dependencies without specifying version numbers.
             mavenBom "org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}"
+        }
+        dependencies {
+            dependency("de.codecentric:spring-boot-admin-starter-server:${springBootAdminVersion}")
+            dependency("de.codecentric:spring-boot-admin-starter-client:${springBootAdminVersion}")
+
         }
     }
     jar {

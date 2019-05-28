@@ -8,9 +8,22 @@ spring:
       uri: http://localhost:8888
       label: master
       profile: dev
+  boot:
+    admin:
+      client:
+        url: http://localhost:8769
 eureka:
   instance:
     prefer-ip-address: true
   client:
     service-url:
       default-zone: http://192.168.0.78:8761/eureka
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  endpoint:
+    health:
+      show-details: always
+

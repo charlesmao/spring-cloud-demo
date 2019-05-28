@@ -3,4 +3,5 @@ include 'spring-cloud-eureka'
 include 'spring-cloud-config'
 include 'spring-cloud-gateway'
 include 'user-provider'
+include 'spring-boot-admin'
 

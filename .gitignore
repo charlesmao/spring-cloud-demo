@@ -19,3 +19,10 @@ nbbuild/
 dist/
 nbdist/
 .nb-gradle/
+
+
+.gradle
+**/logs/
+**/out/
+**/build/
+!gradle/wrapper/gradle-wrapper.jar
